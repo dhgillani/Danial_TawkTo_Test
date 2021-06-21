@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9DI-rF-he5">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Github Users List-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Github Users List" id="BYZ-38-t0r" customClass="ViewController" customModule="Danial_TawkTo_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hrz-hW-6NC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <sections/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FSY-8h-lR2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="LRd-DQ-Xfa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hrz-hW-6NC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SzW-2H-ku2"/>
+                            <constraint firstItem="hrz-hW-6NC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vrb-3m-Sz6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hrz-hW-6NC" secondAttribute="bottom" id="lHJ-5r-9V9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hrz-hW-6NC" secondAttribute="trailing" id="ri7-Hi-MEJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kDs-Rb-w43"/>
+                    <connections>
+                        <outlet property="searchBar" destination="347-BO-J9Y" id="U8W-hs-gvo"/>
+                        <outlet property="tableView" destination="hrz-hW-6NC" id="flO-85-6J0"/>
+                        <segue destination="GHd-4n-B7n" kind="show" identifier="mySegue" id="5Un-X3-DC5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search profile" id="347-BO-J9Y">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </searchBar>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="45.535714285714285"/>
+        </scene>
+        <!--Profile Detail View Controller-->
+        <scene sceneID="t0a-mi-z83">
+            <objects>
+                <viewController id="GHd-4n-B7n" customClass="ProfileDetailViewController" customModule="Danial_TawkTo_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sQM-ke-LUb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PZ9-jK-Hy0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="224"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers : 302" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lb-V0-hrV">
+                                <rect key="frame" x="0.0" y="320" width="207" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="DkM-Z4-uVB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following : 101" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRJ-Zt-DEQ">
+                                <rect key="frame" x="207" y="320" width="207" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0uJ-YK-fpv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKd-V2-3la">
+                                <rect key="frame" x="0.0" y="357.5" width="414" height="95"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name : Danial Hussain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3j-B7-xIg">
+                                        <rect key="frame" x="16" y="8" width="382" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="SWz-ra-fFA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company : Tawk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJb-GY-Ihr">
+                                        <rect key="frame" x="16" y="37" width="382" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="cVj-Qk-MUN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blog : www.tawk.to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3w-ky-1jC">
+                                        <rect key="frame" x="16" y="66" width="382" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Jmh-RF-kaO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="B3j-B7-xIg" secondAttribute="trailing" constant="16" id="1aI-xb-omf"/>
+                                    <constraint firstItem="mJb-GY-Ihr" firstAttribute="leading" secondItem="eKd-V2-3la" secondAttribute="leading" constant="16" id="3Oc-qU-1tS"/>
+                                    <constraint firstAttribute="height" constant="95" id="6qn-Ms-mTP"/>
+                                    <constraint firstItem="S3w-ky-1jC" firstAttribute="top" secondItem="mJb-GY-Ihr" secondAttribute="bottom" constant="8" id="7u2-pK-8dh"/>
+                                    <constraint firstAttribute="trailing" secondItem="S3w-ky-1jC" secondAttribute="trailing" constant="16" id="FVp-3w-hY5"/>
+                                    <constraint firstItem="mJb-GY-Ihr" firstAttribute="top" secondItem="B3j-B7-xIg" secondAttribute="bottom" constant="8" id="dm5-dW-fIi"/>
+                                    <constraint firstAttribute="trailing" secondItem="mJb-GY-Ihr" secondAttribute="trailing" constant="16" id="gg4-iI-w3o"/>
+                                    <constraint firstItem="B3j-B7-xIg" firstAttribute="leading" secondItem="eKd-V2-3la" secondAttribute="leading" constant="16" id="qAZ-gp-PWl"/>
+                                    <constraint firstItem="S3w-ky-1jC" firstAttribute="leading" secondItem="eKd-V2-3la" secondAttribute="leading" constant="16" id="wSJ-Jh-drY"/>
+                                    <constraint firstItem="B3j-B7-xIg" firstAttribute="top" secondItem="eKd-V2-3la" secondAttribute="top" constant="8" id="xtn-nT-H9c"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyF-an-hz8">
+                                <rect key="frame" x="0.0" y="349" width="414" height="0.5"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="bbc-aB-uU0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9T4-be-dVO">
+                                <rect key="frame" x="0.0" y="460.5" width="414" height="0.5"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="Mhy-UT-OXd"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDK-t5-DfW">
+                                <rect key="frame" x="16" y="469" width="44" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="KBJ-H4-XuW"/>
+                                    <constraint firstAttribute="height" constant="21" id="za5-nc-JGD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bJs-8u-2O8">
+                                <rect key="frame" x="16" y="490" width="382" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="wkO-zV-1I2"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KE-6u-Esb">
+                                <rect key="frame" x="155.5" y="586" width="103.5" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YZE-8x-47a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Save"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="GHd-4n-B7n" eventType="touchUpInside" id="7Vs-V1-flQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O2q-y8-9nE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xRJ-Zt-DEQ" firstAttribute="top" secondItem="7lb-V0-hrV" secondAttribute="top" id="1Dq-OO-D9s"/>
+                            <constraint firstItem="O2q-y8-9nE" firstAttribute="trailing" secondItem="bJs-8u-2O8" secondAttribute="trailing" constant="16" id="3uv-ov-2pZ"/>
+                            <constraint firstItem="7lb-V0-hrV" firstAttribute="top" secondItem="PZ9-jK-Hy0" secondAttribute="bottom" constant="8" id="3wO-r8-j0g"/>
+                            <constraint firstItem="kDK-t5-DfW" firstAttribute="leading" secondItem="O2q-y8-9nE" secondAttribute="leading" constant="16" id="4MI-Bi-het"/>
+                            <constraint firstItem="7lb-V0-hrV" firstAttribute="width" secondItem="sQM-ke-LUb" secondAttribute="width" multiplier="0.5" id="78M-Lr-BC1"/>
+                            <constraint firstItem="9T4-be-dVO" firstAttribute="leading" secondItem="sQM-ke-LUb" secondAttribute="leading" id="8Nu-JC-mAW"/>
+                            <constraint firstItem="xRJ-Zt-DEQ" firstAttribute="trailing" secondItem="O2q-y8-9nE" secondAttribute="trailing" id="G2O-qT-EyB"/>
+                            <constraint firstAttribute="trailing" secondItem="9T4-be-dVO" secondAttribute="trailing" id="IGb-AJ-K4C"/>
+                            <constraint firstItem="bJs-8u-2O8" firstAttribute="top" secondItem="kDK-t5-DfW" secondAttribute="bottom" id="ILu-wS-8LB"/>
+                            <constraint firstItem="eKd-V2-3la" firstAttribute="leading" secondItem="O2q-y8-9nE" secondAttribute="leading" id="Njk-Ek-7lI"/>
+                            <constraint firstItem="jyF-an-hz8" firstAttribute="leading" secondItem="O2q-y8-9nE" secondAttribute="leading" id="OSn-WE-JAd"/>
+                            <constraint firstItem="3KE-6u-Esb" firstAttribute="top" secondItem="bJs-8u-2O8" secondAttribute="bottom" constant="16" id="P2A-x9-2HW"/>
+                            <constraint firstItem="7lb-V0-hrV" firstAttribute="leading" secondItem="O2q-y8-9nE" secondAttribute="leading" id="PjB-3e-1qo"/>
+                            <constraint firstItem="PZ9-jK-Hy0" firstAttribute="trailing" secondItem="O2q-y8-9nE" secondAttribute="trailing" id="Q8k-DM-zpr"/>
+                            <constraint firstItem="PZ9-jK-Hy0" firstAttribute="leading" secondItem="O2q-y8-9nE" secondAttribute="leading" id="SGE-pZ-Oww"/>
+                            <constraint firstItem="PZ9-jK-Hy0" firstAttribute="height" secondItem="sQM-ke-LUb" secondAttribute="height" multiplier="0.25" id="WVM-yB-dhl"/>
+                            <constraint firstItem="xRJ-Zt-DEQ" firstAttribute="width" secondItem="7lb-V0-hrV" secondAttribute="width" id="ZCE-bD-YMw"/>
+                            <constraint firstItem="eKd-V2-3la" firstAttribute="trailing" secondItem="O2q-y8-9nE" secondAttribute="trailing" id="a9K-i7-1q3"/>
+                            <constraint firstItem="eKd-V2-3la" firstAttribute="top" secondItem="jyF-an-hz8" secondAttribute="bottom" constant="8" id="dRa-T2-S14"/>
+                            <constraint firstItem="jyF-an-hz8" firstAttribute="top" secondItem="7lb-V0-hrV" secondAttribute="bottom" constant="8" id="gVk-9c-PeK"/>
+                            <constraint firstItem="9T4-be-dVO" firstAttribute="top" secondItem="eKd-V2-3la" secondAttribute="bottom" constant="8" id="iu0-RX-KSZ"/>
+                            <constraint firstItem="PZ9-jK-Hy0" firstAttribute="top" secondItem="O2q-y8-9nE" secondAttribute="top" id="kwE-6Y-wxx"/>
+                            <constraint firstItem="kDK-t5-DfW" firstAttribute="top" secondItem="9T4-be-dVO" secondAttribute="bottom" constant="8" id="lHH-fX-t0X"/>
+                            <constraint firstItem="3KE-6u-Esb" firstAttribute="width" secondItem="sQM-ke-LUb" secondAttribute="width" multiplier="0.25" id="tiU-QO-FmB"/>
+                            <constraint firstItem="bJs-8u-2O8" firstAttribute="leading" secondItem="O2q-y8-9nE" secondAttribute="leading" constant="16" id="ueJ-ag-Zrt"/>
+                            <constraint firstItem="jyF-an-hz8" firstAttribute="trailing" secondItem="O2q-y8-9nE" secondAttribute="trailing" id="viv-JN-hRh"/>
+                            <constraint firstItem="3KE-6u-Esb" firstAttribute="centerX" secondItem="O2q-y8-9nE" secondAttribute="centerX" id="waH-bz-832"/>
+                            <constraint firstItem="xRJ-Zt-DEQ" firstAttribute="height" secondItem="7lb-V0-hrV" secondAttribute="height" id="yM7-QD-sxU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rmg-Lp-oYK"/>
+                    <connections>
+                        <outlet property="bannerIV" destination="PZ9-jK-Hy0" id="QW9-9E-me1"/>
+                        <outlet property="blogLbl" destination="S3w-ky-1jC" id="tHX-Ly-zmn"/>
+                        <outlet property="companyLbl" destination="mJb-GY-Ihr" id="9UT-J3-weM"/>
+                        <outlet property="followersLbl" destination="7lb-V0-hrV" id="A4Q-Sc-GtD"/>
+                        <outlet property="followingLbl" destination="xRJ-Zt-DEQ" id="sDN-GQ-OGs"/>
+                        <outlet property="nameLbl" destination="B3j-B7-xIg" id="glq-l5-1Me"/>
+                        <outlet property="notesLbl" destination="kDK-t5-DfW" id="aqK-3G-L4F"/>
+                        <outlet property="notesTypingTV" destination="bJs-8u-2O8" id="8ND-Zb-bJw"/>
+                        <outlet property="saveBtn" destination="3KE-6u-Esb" id="RyC-Ik-9OY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ufl-IN-ubi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781.1594202898552" y="45.535714285714285"/>
+        </scene>
+        <!--Github User List-->
+        <scene sceneID="G9H-Ks-VVx">
+            <objects>
+                <navigationController title="Github User List" automaticallyAdjustsScrollViewInsets="NO" id="9DI-rF-he5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E1v-fL-Mvh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="f5v-bq-IIy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dud-fR-klf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="45.535714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
